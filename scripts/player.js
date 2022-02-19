@@ -241,7 +241,7 @@ let albums = allMusic.map(function (key) {
 });
 
 for (let i = 0; i < removeDuplicate(albums).length; i++) {
-    let liAlbumTag = `<div class="album__card" id="${removeDuplicate(albums)[i]}" onclick="showCurrentAlbum(), getClickedElementID(this.id)">
+    let liAlbumTag = `<div class="album__card" id="${removeDuplicate(albums)[i]}" onclick="showCurrentAlbum(), getClickedAlbumID(this.id)">
                             <img class="album__card--image" src="../assets/imgs/${allMusic[i].img}">
                             <p class="album__card--name">${removeDuplicate(albums)[i]}</p>
                         </div>`;
@@ -250,7 +250,7 @@ for (let i = 0; i < removeDuplicate(albums).length; i++) {
 
 const currentAlbumTitle = document.querySelector('.currentAlbum__title');
 let albumSongsList = document.querySelector('.albumSongsList');
-function getClickedElementID (id)
+function getClickedAlbumID (id)
 {
     let elementID = id;
     currentAlbumTitle.innerText = elementID;
@@ -262,8 +262,8 @@ function getClickedElementID (id)
         } else {
             return false;
         }
-    })
-    albumSongsList.insertAdjacentHTML("afterend", filteredMusic);
+    });
+    albumSongsList.insertAdjacentHTML('beforeend', filteredMusic);
 }
 
 const ulArtistsTag = document.querySelector(".artists__list");
