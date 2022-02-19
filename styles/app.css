@@ -127,6 +127,7 @@ body::-webkit-scrollbar {
 
 .content #songs .songs__list .song {
     height: var(--song-height);
+    margin: 15px 0;
     display: grid;
     grid-template-rows: repeat(2, calc(var(--song-height) / 2));
     grid-template-columns: var(--song-height) 1fr 70px;
@@ -134,16 +135,11 @@ body::-webkit-scrollbar {
     align-items: center;
     list-style: none;
     font-size: 16px;
-    border-bottom: 1px solid var(--color-darker);
-}
-
-.content #songs .songs__list .song:nth-last-child(1) {
-    border-bottom: none;
 }
 
 .song .song__image {
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
     grid-row: 1 / span 3;
     grid-column: 1;
     background: var(--color-darker);
@@ -252,14 +248,11 @@ body::-webkit-scrollbar {
     grid-template-rows: calc(var(--player-height) - var(--player-margin) - 10px);
     grid-template-columns: calc(var(--player-height) - 20px) 1fr;
     position: absolute;
-    top: 2vh;
     left: var(--body-padding);
     right: var(--body-padding);
-    bottom: 0;
-    margin: var(--player-margin) 0;
+    bottom: 15px;
     background: var(--color-lighter);
-    border-radius: var(--player-height);
-    transform: translateY(87vh);
+    border-radius: 50px;
     transition: var(--duration);
 }
 
