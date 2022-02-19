@@ -235,13 +235,20 @@ function removeDuplicate (table)
     return table.filter((item, index) => table.indexOf(item) === index);
 }
 
+let currentAlbumTitle = document.querySelector('.currentAlbum__title');
+function getClickedElementID (id)
+{
+    let elementID = id;
+    currentAlbumTitle.innerText = elementID;
+}
+
 const ulAlbumsTag = document.querySelector(".albums__list");
 let albums = allMusic.map(function (key) {
     return key, key.album;
 });
 
 for (let i = 0; i < removeDuplicate(albums).length; i++) {
-    let liAlbumTag = `<div class="album__card" id="${removeDuplicate(albums)[i]}" onclick="showCurrentAlbum()">
+    let liAlbumTag = `<div class="album__card" id="${removeDuplicate(albums)[i]}" onclick="showCurrentAlbum(), getClickedElementID(this.id)">
                             <img class="album__card--image" src="../assets/imgs/${allMusic[i].img}">
                             <p class="album__card--name">${removeDuplicate(albums)[i]}</p>
                         </div>`;
