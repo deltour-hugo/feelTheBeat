@@ -33,7 +33,10 @@
         <div id="albums" class="page">
             <ul class="albums__list"></ul>
             <div class="currentAlbum">
-                <i class="material-icons-round" onclick="hideCurrentAlbum()">expand_more</i>
+                <div class="currentAlbum__topbar">
+                    <i class="material-icons-round" onclick="hideCurrentAlbum()">expand_more</i>
+                    <span class="currentAlbum__title">Current Album</span>
+                </div>
                 <ul class="albumSongsList"></ul>
             </div>
         </div>

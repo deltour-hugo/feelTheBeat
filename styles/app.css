@@ -212,7 +212,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     width: 100vw;
     background: #14AA4E;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -100vw;
     bottom: 0;
@@ -223,11 +223,25 @@ body::-webkit-scrollbar {
     height: 100vh;
     width: 100vw;
     background: #14AA4E;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     transition: right var(--duration);
+}
+
+.currentAlbum__topbar {
+    align-self: center;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 25% 50% 25%;
+    justify-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.currentAlbum__topbar i {
+    transform: rotate(90deg);
 }
 
 .player {
