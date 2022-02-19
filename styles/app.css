@@ -211,7 +211,7 @@ body::-webkit-scrollbar {
 .currentAlbum {
     height: 100vh;
     width: 100vw;
-    background: #14AA4E;
+    background: var(--color-light);
     position: fixed;
     top: 0;
     right: -100vw;
@@ -222,7 +222,7 @@ body::-webkit-scrollbar {
 .currentAlbum__is-opened {
     height: 100vh;
     width: 100vw;
-    background: #14AA4E;
+    background: var(--color-light);
     position: fixed;
     top: 0;
     right: 0;

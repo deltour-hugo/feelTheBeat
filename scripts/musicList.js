@@ -8,8 +8,8 @@ let allMusic = [
     },
     {
         name: "Spit Out The Bone",
-        artist: "Disturbed",
-        album: "Évolution",
+        artist: "Metallica",
+        album: "Hardwired To Self Destruct",
         img: "current__song--image.jpg",
         src: "Spit-Out-the-Bone"
     },

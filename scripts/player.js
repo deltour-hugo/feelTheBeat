@@ -235,13 +235,6 @@ function removeDuplicate (table)
     return table.filter((item, index) => table.indexOf(item) === index);
 }
 
-let currentAlbumTitle = document.querySelector('.currentAlbum__title');
-function getClickedElementID (id)
-{
-    let elementID = id;
-    currentAlbumTitle.innerText = elementID;
-}
-
 const ulAlbumsTag = document.querySelector(".albums__list");
 let albums = allMusic.map(function (key) {
     return key, key.album;
@@ -253,6 +246,24 @@ for (let i = 0; i < removeDuplicate(albums).length; i++) {
                             <p class="album__card--name">${removeDuplicate(albums)[i]}</p>
                         </div>`;
     ulAlbumsTag.insertAdjacentHTML("beforeend", liAlbumTag);
+}
+
+const currentAlbumTitle = document.querySelector('.currentAlbum__title');
+let albumSongsList = document.querySelector('.albumSongsList');
+function getClickedElementID (id)
+{
+    let elementID = id;
+    currentAlbumTitle.innerText = elementID;
+    const albumSongResult = allMusic.filter(function(music) {
+        if (music.album == elementID) {
+            filteredMusic = `<div>
+                                <span>${music.name}</span>
+                            </div>`;
+        } else {
+            return false;
+        }
+    })
+    albumSongsList.insertAdjacentHTML("afterend", filteredMusic);
 }
 
 const ulArtistsTag = document.querySelector(".artists__list");
